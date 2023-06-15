@@ -5,42 +5,65 @@
   <style>
     body {
       font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
     }
     h1 {
       text-align: center;
+      color: #333;
+      padding: 20px 0;
     }
     form {
       margin: 0 auto;
       width: 300px;
       text-align: center;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
-    input[type="number"] {
-      width: 100px;
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+      color: #555;
+    }
+    select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
     }
     input[type="submit"] {
-      margin-top: 10px;
-      padding: 5px 10px;
+      margin-top: 20px;
+      padding: 10px 20px;
       background-color: #4CAF50;
       color: white;
       border: none;
+      border-radius: 4px;
       cursor: pointer;
     }
     #result {
       margin-top: 20px;
       font-weight: bold;
+      text-align: center;
+      padding: 10px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
   </style>
 </head>
 <body>
   <h1>Resistance and Tolerance Calculator</h1>
   <form id="calculatorForm">
-    <label for="bandCount">Number of Bands:</label><br>
+    <label for="bandCount">Number of Bands:</label>
     <select id="bandCount" name="bandCount">
       <option value="3">3</option>
       <option value="4">4</option>
       <option value="5">5</option>
     </select><br><br>
-    <label for="band1">Band 1:</label><br>
+    <label for="band1">Band 1:</label>
     <select id="band1" name="band1">
       <option value="0">Black</option>
       <option value="1">Brown</option>
@@ -53,7 +76,7 @@
       <option value="8">Gray</option>
       <option value="9">White</option>
     </select><br><br>
-    <label for="band2">Band 2:</label><br>
+    <label for="band2">Band 2:</label>
     <select id="band2" name="band2">
       <option value="0">Black</option>
       <option value="1">Brown</option>
@@ -66,7 +89,7 @@
       <option value="8">Gray</option>
       <option value="9">White</option>
     </select><br><br>
-    <label for="band3">Band 3:</label><br>
+    <label for="band3">Band 3:</label>
     <select id="band3" name="band3">
       <option value="0">Black</option>
       <option value="1">Brown</option>
@@ -79,7 +102,7 @@
       <option value="8">Gray</option>
       <option value="9">White</option>
     </select><br><br>
-    <label for="band4">Band 4 (Tolerance):</label><br>
+    <label for="band4">Band 4 (Tolerance):</label>
     <select id="band4" name="band4">
       <option value="1">Brown</option>
       <option value="2">Red</option>
@@ -121,8 +144,10 @@
         }
       }
 
-      document.getElementById("result").innerHTML = "Resistance: " + resistance.toFixed(2) + " ohms<br>" +
-        "Tolerance: " + tolerance;
+      document.getElementById("result").innerHTML = "<span style='font-size: 24px;'>Resistance:</span><br>" +
+        "<span style='font-size: 36px;'>" + resistance.toFixed(2) + " Ω</span><br><br>" +
+        "<span style='font-size: 24px;'>Tolerance:</span><br>" +
+        "<span style='font-size: 18px;'>" + tolerance + "</span>";
     });
   </script>
 </body>
