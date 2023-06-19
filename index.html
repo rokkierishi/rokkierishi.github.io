@@ -5,27 +5,57 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f2f2f2;
+      background-color: #262626;
     }
     h1 {
       text-align: center;
-      color: #333;
+      color: #ffff;
       padding: 20px 0;
+    }
+    h2 {
+      text-align: center;
+      color: #ffff;
+      padding: 20px 0;
+    }
+    h3 {
+      text-align: center;
+      color: #ff1f1f;
+      padding: 20px 0;
+    }
+    h.ex1:hover, h.ex1:active {color: #2155FF; font-size: 150%; text-decoration: underline;}
+
+    h4 {
+      text-align: center;
+      color: #ffff;
+      padding: 20px 0;
+    }
+
+    p1 {
+      color: #ffff;
+    }
+    p2 {
+      color: #ffff;
+    }
+    p3 {
+      color: #ffff;
     }
     form {
       margin: 0 auto;
       width: 300px;
       text-align: center;
-      background-color: #fff;
+      background-color: #747474;
       padding: 20px;
       border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8), 0 -10px 120px -5px #FF2121;
+    }
+    form:hover {
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8), 0 -10px 120px -5px #2155FF;
     }
     label {
       display: block;
       margin-bottom: 10px;
       font-weight: bold;
-      color: #555;
+      color: #ffff;
     }
     select {
       width: 100%;
@@ -33,29 +63,44 @@
       border: 1px solid #ccc;
       border-radius: 4px;
       box-sizing: border-box;
+      background-color: FF6C6C;
     }
     input[type="submit"] {
       margin-top: 20px;
       padding: 10px 20px;
-      background-color: #4CAF50;
+      background-color: #B70000;
       color: white;
       border: none;
       border-radius: 4px;
       cursor: pointer;
     }
+    input:hover {
+      background-color: #3751f5
+    }
     #result {
       margin-top: 20px;
+      margin-left: 500px;
+      margin-right: 500px;
       font-weight: bold;
       text-align: center;
-      padding: 10px;
-      background-color: #fff;
+      padding: 20px;
       border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      color: #ffff;
+      background-color: #747474;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8), 0 -1px 120px -5px #FF2121;
+    }
+    #result:hover {
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8), 0 -1px 120px -5px #2155FF;
     }
   </style>
 </head>
 <body>
   <h1>Resistance and Tolerance Calculator</h1>
+  <hr width="100%"
+      color="white"
+      style="margin-top: 4em">
+  <h2>Calculator:</h2>
   <form id="calculatorForm">
     <label for="bandCount">Number of Bands:</label>
     <select id="bandCount" name="bandCount">
@@ -150,5 +195,106 @@
         "<span style='font-size: 18px;'>" + tolerance + "</span>";
     });
   </script>
+
+  <hr width="100%"
+      color="white"
+      style="margin-top: 4em">
+
+  <h2>What is a Resistor?</h2>
+  <center>
+        <p1>A resistor is identified by its pattern of color of bands. There are 4, 5 and 6
+        <br>
+ band resistors. To calculate resistance, you can select the appropriate option of colours in the above Resistance and Tolarence Calculator.
+  </center>
+
+  <img onmouseover="bigImage(this)" onmouseout="normalImage(this)" 
+src="https://circuitdigest.com/sites/default/files/inlineimages/resistor-color-code.png"
+       alt="Resistor Example"
+       style="width:400px;
+              height: 100px;
+              top: 20px;
+              left: 530px;
+              position: relative;">
+  <hr width="100%"
+      color="white"
+      style="margin-top: 4em">
+
+  <script>
+   function bigImage(x) {
+     x.style.height = "150px";
+     x.style.width = "450px";
+   }
+
+   function normalImage(x) {
+     x.style.height = "100px";
+     x.style.width = "400px";
+   }
+  </script>
+  
+  <h2>How to Calculate Resistance Manually?</h2>
+  <center>
+  <p2>You can calculate resistance manually by referring to the table below. You can use the following formula.
+  </center>
+
+  <h3><h class="ex1" herf="default.asp">
+      Resistance= ab.c+-d%</h></h3>
+
+  <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="https://circuitdigest.com/sites/default/files/inlineimages/Resistor-color-code-chart.png"
+       alt="Colour Code Chart"
+       style="width:400px;
+              height: 300px;
+              top: 20px;
+              left: 530px;
+              position: relative;">
+
+  <hr width="100%"
+      color="white"
+      style="margin-top: 4em">
+
+ <script>
+   function bigImg(x) {
+     x.style.height = "350px";
+     x.style.width = "450px";
+   }
+
+   function normalImg(x) {
+     x.style.height = "300px";
+     x.style.width = "400px";
+   }
+ </script>
+
+ <h2>Which Band is First?</h2>
+ <center>
+ <p3>The short answer: You'll know that from experience! But there are some rules you can follow:<br><br>
+1.) Some resistors have the color bands grouped together and/or close to one end. Hold the resistor with the closely grouped bands to your left and read the resistor from the left to the right.<br>
+2.) With 5% and 10% resistors the procedure is simple: hold the resistor with the silver or gold band to the right and read the resistor from the left to the right.<br>
+3.) The first band can't be silver or gold, so if you hold such a resistor you'll know instantly where to start. Also, the 3rd color for 4-band resistors will be blue (106) or less and the 4th color for 5 band resistors will be green (105) or less, as basic resistor values range from 0.1 Ohm to 10 Ohms.
+ <center>
+
+  <img onmouseover="bigGIF(this)" onmouseout="normalGIF(this)"  src="https://technologystudent.com/images4/batcir1.gif"
+       alt="Right Way to Read a Resistor"
+       style="width: 300px;
+              height: 300px;
+              top: 20px;
+              left: 0px;
+              position: relative;">
+
+
+  <hr width="100%"
+      color="white"
+      style="margin-top: 4em">
+
+ <script>
+   function bigGIF(x) {
+     x.style.height = "350px";
+     x.style.width = "350px";
+   }
+
+   function normalGIF(x) {
+     x.style.height = "300px";
+     x.style.width = "300px";
+   }
+ </script>
+
 </body>
 </html>
